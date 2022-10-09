@@ -1,12 +1,21 @@
+
 cycle++;
-if (cycle==100000){   
+if (cycle==100000){ 
+        int onlineMin = onlineTime/60;
+        int onlineHours = onlineMin/60;
+        int onlineDays = onlineMin/24;  
         Serial.print("Connected to ");
         Serial.println(ssid);
         Serial.println("IP address: ");
         Serial.println(WiFi.localIP());
         Serial.print("Approxemately ");
         Serial.print(onlineTime);
-        Serial.println(" seconds online");
+        Serial.println(" seconds online     ");
+        Serial.print(onlineMin);
+        Serial.print(" minutes online     ");
+        Serial.print(onlineHours);
+        Serial.print(" hours online     ");
+        Serial.print(onlineDays);
+        Serial.println(" days online");  
         cycle = 0;
         onlineTime++;
-  }

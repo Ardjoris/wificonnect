@@ -1,0 +1,12 @@
+cycle++;
+if (cycle==100000){   
+        Serial.print("Connected to ");
+        Serial.println(ssid);
+        Serial.println("IP address: ");
+        Serial.println(WiFi.localIP());
+        Serial.print("Approxemately ");
+        Serial.print(onlineTime);
+        Serial.println(" seconds online");
+        cycle = 0;
+        onlineTime++;
+  }

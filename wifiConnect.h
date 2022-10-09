@@ -13,8 +13,6 @@ ipAdressFixed();
     if (WiFi.status() != WL_CONNECTED)
     { // als wifi niet geconnect
         // Connect to Wi-Fi network with SSID and password
-        Serial.print("Connecting to ");
-        Serial.println(ssid);
         WiFi.begin(ssid, password);
         while (WiFi.status() != WL_CONNECTED)
         {
@@ -23,7 +21,8 @@ ipAdressFixed();
             delay(250);
             digitalWrite(LED_BUILTIN, LOW);
             delay(250);
-            Serial.println("Connecting to WiFi..");
+            Serial.print("Connecting to ");
+            Serial.println(ssid);
         }
         // Print local IP address
         Serial.println("");
@@ -31,4 +30,4 @@ ipAdressFixed();
         Serial.println("IP address: ");
         Serial.println(WiFi.localIP());
     }
-}wifi
+}
